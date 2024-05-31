@@ -1,0 +1,98 @@
+## Re run PopulateExtraLeagues but only if there is no teams with such League ID
+
+
+import sqlite3
+import time
+from player_service import getPlayersByTeamId
+from teams_service import getLeagueTeams_wikidata
+
+def fetch_league_ids():
+    league_ids = []
+    try:
+        conn = sqlite3.connect("Database31HardCodedWithEverything.db")
+        cursor = conn.cursor()
+        cursor.execute("SELECT LeagueID FROM Leagues")
+        league_ids = [league[0] for league in cursor.fetchall()]
+    except sqlite3.Error as e:
+        print(f"Error fetching league IDs: {e}")
+    finally:
+        conn.close()
+    return league_ids
+
+def populate_database(leagueID):
+    print(f'Populating database for {leagueID}')
+    try:
+        teams = getLeagueTeams_wikidata(leagueID)
+        if teams:
+            insert_teams(teams, leagueID)
+            print("Database was populated for league:", leagueID)
+        else:
+            print(f"Skipping league {leagueID} due to fetch error or rate limiting.")
+    except Exception as e:
+        print(f"General error with league {leagueID}: {e}")
+    finally:
+        time.sleep(5)
+
+def insert_teams(teams, leagueID):
+    conn = sqlite3.connect("Database31HardCodedWithEverything.db")
+    cursor = conn.cursor()
+    for team in teams:
+        # Assuming 'team' is an object with attributes. Adjust attribute names as necessary.
+        team_list = [
+            getattr(team, 'id'),  # or team.id if you're sure 'id' attribute will exist
+            getattr(team, 'name'),  # or team.name
+            getattr(team, 'logo'),  # or team.logo
+            getattr(team, 'colour'),  # or team.colour
+            leagueID,
+            getattr(team, 'stadiumName'),  # or team.stadiumName
+            getattr(team, 'inception'),  # or team.inception
+        ]
+        cursor.execute('''
+            INSERT OR IGNORE INTO Teams (teamId, name, logo, colour, leagueID, stadiumName, inception)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        ''', team_list)
+    conn.commit()
+    conn.close()
+    print("Teams inserted successfully.")
+
+
+def populate_players(teams):
+    conn = sqlite3.connect("Database31HardCodedWithEverything.db")
+    cursor = conn.cursor()
+    total_players = 0
+    for team in teams:
+        # Here, ensure you're accessing the team ID in a manner consistent with your team objects.
+        team_id = getattr(team, 'id')  # Assuming team objects have an 'id' attribute.
+        try:
+            players = getPlayersByTeamId(team_id)
+            for player in players:
+                # Assuming player objects, access attributes with getattr or dot notation.
+                player_list = [
+                    getattr(player, 'id'),  # Adjust attribute names as necessary
+                    getattr(player, 'name'),
+                    getattr(player, 'years_played'),
+                    team_id,  # Use the team_id from the team object above
+                    getattr(player, 'DOB'),
+                    getattr(player, 'citizenship'),
+                    getattr(player, 'position'),
+                    getattr(player, 'birthName'),
+                ]
+                cursor.execute('''
+                    INSERT OR IGNORE INTO Players (playerId, name, years_played, teamID, DOB, citizenship, position, birthName)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                ''', player_list)
+                total_players += 1
+        except Exception as e:
+            print(f"Skipping team {team_id} due to error: {e}")
+            continue  # Skip to next team on error
+    conn.commit()
+    conn.close()
+    print(f"Total players inserted: {total_players}")
+
+def main():
+    league_ids = fetch_league_ids()
+    for league_id in league_ids:
+        populate_database(league_id)
+
+if __name__ == "__main__":
+    main()

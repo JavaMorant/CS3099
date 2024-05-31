@@ -1,0 +1,96 @@
+.about-container {
+  text-align: center; /* Center the content of the container */
+  height: auto; /* Ensure container takes up at least the full viewport height */
+  padding-top: 100px; /* Add space at the top */
+  padding-bottom: 100px; /* Add space at the bottom */
+}
+
+.about-paragraph {
+  width: 100%;
+  text-align: right; /* Center the paragraph text */
+  margin: auto; /* Center the paragraph container */
+  font-size: 25px; /* Adjusted font size */
+  padding: 20px 10%; /* Add padding to top and bottom, and center with left and right padding */
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
+
+.about-text {
+  width: 80%;
+  margin: 30px auto; /* Center the text box */
+  font-size: 4.6vw; /* Adjust size for "big" text */
+  padding-bottom: 20px; /* Add space below the text */
+}
+
+.text-line {
+  color: grey; /* Default text color */
+  transition: color 0.3s; /* Smooth transition for color change */
+  font-weight: bold;
+}
+
+.text-line:hover {
+  color: black; /* Text color on hover */
+}
+
+.about-link {
+  display: inline-block; /* Allows the link to fit the content */
+  color: grey; /* Initial link color */
+  vertical-align: middle;
+  text-decoration: none; /* Remove underline from the link */
+  transition: color 0.3s; /* Smooth transition for color change */
+  margin-top: 20px; /* Add some space above the link */
+}
+
+.about-link:hover {
+  color: black; /* Link color changes to black on hover */
+}
+
+.arrow-icon {
+  display: inline-block;
+  width: 13px; /* Example size, adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  vertical-align: middle; /* Align with text */
+  opacity: 0.5;
+  margin-left: 4px;
+}
+
+.about-text .text-line-1 {
+  text-align: left;
+}
+
+.about-text .text-line-2 {
+  text-align: right;
+}
+
+.about-paragraph a {
+  font-size: 18px;
+}
+
+.about-paragraph a:hover .arrow-icon {
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+
+/* Existing styles */
+
+/* High Contrast Mode Styles */
+body.high-contrast .about-container {
+  /* High contrast mode adjustments for about container */
+  background-color: #000; /* Example: darker background */
+  color: #fff; /* Example: light text for high contrast */
+}
+
+body.high-contrast .about-paragraph,
+body.high-contrast .about-text {
+  color: #fff; /* Example: yellow text for better visibility */
+}
+
+body.high-contrast .text-line,
+body.high-contrast .about-link {
+  color: #fff; /* Example: change text and link color to yellow */
+}
+
+
+body.high-contrast .arrow-icon {
+  filter: invert(100%); /* Example: invert icons for high contrast */
+}

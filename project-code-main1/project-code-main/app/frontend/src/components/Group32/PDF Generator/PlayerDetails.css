@@ -1,0 +1,18 @@
+
+.share-button {
+  width: 50px !important;
+  height: 50px !important;
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: var(--background-white) !important;
+  border: 2px solid var(--background-black) !important;
+  border-radius: 10px;
+
+}
+.share-img {
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+}

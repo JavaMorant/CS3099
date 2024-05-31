@@ -1,0 +1,36 @@
+/* Normal styles for the graph container */
+.sigma-container {
+    width: 100%;
+    height: 600px; /* Adjust the height as needed */
+    background-color: #f4f4f4; /* Light grey background */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensures the graph does not overflow its container */
+}
+
+/* High Contrast Mode styles */
+body.high-contrast .sigma-container {
+    background-color: #ffffff; /* Darker background for high contrast */
+    border-color: #fff; /* White border for high contrast */
+    color: #fff; /* White text for high contrast */
+}
+
+/* Styles for when high contrast mode is active */
+body.high-contrast .sigma-node,
+body.high-contrast .sigma-edge {
+    stroke: #ff0; /* Yellow outline for nodes and edges */
+    stroke-width: 2px; /* Increase stroke width for visibility */
+}
+
+.sigma-node:hover,
+.sigma-edge:hover {
+    cursor: pointer;
+}
+
+/* Additional customizations for high contrast mode */
+body.high-contrast .sigma-node:hover,
+body.high-contrast .sigma-edge:hover {
+    stroke: #ff0; /* Yellow stroke for hover state in high contrast mode */
+}
+
+

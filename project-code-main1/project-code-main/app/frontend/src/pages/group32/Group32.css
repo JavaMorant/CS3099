@@ -1,0 +1,145 @@
+@import '../../constants/colours.css';
+
+.App {
+    text-align: left;
+    font-family: Jakarta;
+    height: 100vh;
+    overflow: hidden !important;
+}
+  
+.App-map-and-search {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  overflow-y: auto; 
+}
+
+.App-search{
+  flex-grow: 0; 
+  flex-shrink: 0;  
+  display: flex;
+  border-right: 2px;
+  border-style: solid;
+  border-right-color: rgb(225, 225, 225);
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: top;
+  min-width: 30vw;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 30px;
+}
+
+.App-map{
+  justify-content: center;
+  align-items: top;
+  display: flex;
+  flex-grow: 1; 
+  flex-shrink: 1;
+  position: relative
+}
+
+.view-change {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: top;
+ 
+  flex-grow: 0;
+  width: 100%;
+  padding-top: 20px;
+  padding-left: 20px;
+  position: relative
+}
+
+.group-buttons {
+  display: flex;
+  align-items: center;
+  flex-grow: 0;
+  padding-bottom: 10px;
+}
+
+.header {
+  font-weight: bold;
+  font-size: 24px;
+  white-space: normal;
+  word-wrap: break-word;
+  padding-right: 20px;
+}
+
+.switch-group{
+  width: 50px; 
+  height: 50px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+} 
+
+.control-buttons {
+  padding-right: 10px;
+}
+
+.dark-mode-toggle {
+  align-items: center;
+  padding-right: 20px;
+}
+
+.dark-mode-toggle img {
+  align-items: center;
+  padding-top: 1px;
+  width: 90%;
+  height: 90%;
+  
+}
+
+.switch-group img{
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.search-bar {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
+.control-buttons img {
+  width: 70%;
+  height: 70%;
+  object-fit: cover 
+}
+
+.search-button {
+  width: 50px; 
+  height: 50px;
+  padding: 0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-player-message-group {
+  font-size: 18px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.no-player-message-individual {
+  font-size: 17px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.dark-mode::placeholder {
+  color: var(--background-white);
+}
+
+.light-mode::placeholder {
+  color: var(--background-black);
+}

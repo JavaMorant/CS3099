@@ -1,0 +1,51 @@
+@import '../../../constants/colours.css';
+
+.carousel {
+  display: flex;
+  padding: 20px;
+  padding-top: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.carousel img {
+  background-color: transparent;
+  height: 30px; 
+  width: 30px; 
+  margin-left: 20px; 
+}
+
+.prev-button {
+  margin-right: 10px;
+}
+
+.next-button {
+  margin-left: 10px;
+}
+
+.nav-buttons {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+}
+  
+button {
+  background-color: var(--button-blue);;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+  
+.carousel-item {
+  width: 250px;
+  white-space: pre-wrap;
+}
+
+.carousel-team {
+  font-weight: bold;
+}

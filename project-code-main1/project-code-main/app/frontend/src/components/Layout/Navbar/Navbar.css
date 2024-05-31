@@ -1,0 +1,41 @@
+.light-mode {
+    background-color: var(--page-background-light);
+    color: var(--page-background-dark);
+}
+  
+.dark-mode {
+  background-color: var(--page-background-dark) !important;
+  color: var(--page-background-light);
+}
+
+.nav-container {
+  background-color: #e3e4e5;
+}
+
+nav {
+  margin: 0 10%;
+}
+
+/* High Contrast Mode styles */
+body.high-contrast .nav-container {
+  background-color: #000000; 
+}
+
+body.high-contrast nav {
+  color: #ff0; 
+  text-decoration: underline;
+}
+
+body.high-contrast .nav-link:hover,
+body.high-contrast .nav-link:focus,
+body.high-contrast .nav-link:active {
+  color: #fff !important; 
+}
+
+body.high-contrast .h-12 {
+  filter: invert(100%);
+}
+
+body.high-contrast img[src*="01-foundation-black-text.png"] { 
+  filter: invert(100%);
+}

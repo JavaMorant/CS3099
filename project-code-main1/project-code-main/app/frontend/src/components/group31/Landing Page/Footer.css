@@ -1,0 +1,49 @@
+.footer {
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center; /* Centers the content vertically */
+}
+
+.footer-left a {
+    margin-right: 20px; /* Adds space between the links */
+    text-decoration: none; /* Optional: Removes the underline from the links */
+    color: black; /* Sets the color of the links */
+}
+
+.footer-logo {
+    width: 50px; /* Adjust the size as necessary */
+    height: auto; /* Maintains the aspect ratio of the logo */
+    margin-right: 20px; /* Adds space between the logo and the first link */
+}
+
+.footer-right {
+    text-align: right;
+}
+
+
+.high-contrast .footer {
+    background-color: #000000;
+    color: #fff; 
+}
+
+body.high-contrast .footer-left {
+    filter: invert(100%);
+  }
+
+.high-contrast .footer-left a{
+    color: rgb(0, 17, 255); 
+}
+
+

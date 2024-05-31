@@ -1,0 +1,15 @@
+[project]
+name = "backend"
+version = "0.1.0"
+authors = [
+    {name = "<Your Name>", email = "<Your Email>"},
+    {name = "<Your Name>", email = "<Your Email>"},
+]
+readme = "README.md"
+requires-python = ">=3.10"
+
+[build-system]
+requires = ["setuptools>=61.2", "wheel"]
+
+[tool.setuptools.packages.find]
+exclude = ["static"]

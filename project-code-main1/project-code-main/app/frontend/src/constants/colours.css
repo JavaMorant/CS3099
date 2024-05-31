@@ -1,0 +1,14 @@
+:root {
+    --button-blue: #0000DB; 
+    --button-blue-darkmode: #71CFFF; 
+    --button-grey: #606060; 
+    --background-black: #000000; 
+    --background-white: #ffffff;
+    --background-dark-grey: #2e2e2e;
+    --background-light-grey: #f0f0f0;
+    --dark-grey: #353535;
+    --light-grey: #D6D6D6;
+    --page-background-light: #f0f0f0;
+    --page-background-dark: #121212;
+    --error: red;
+}

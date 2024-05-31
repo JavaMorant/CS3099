@@ -1,0 +1,70 @@
+@import '../../../constants/colours.css';
+
+.clear-all {
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: var(--button-white);
+}
+
+.dark-mode button {
+  background-color: var(--button-blue-darkmode);
+  color: var(--background-black);
+}
+
+.light-mode button {
+  background-color: var(--button-blue);
+  color: var(--background-white);
+}
+
+.filter-container {
+  padding-bottom: 10px;
+  padding-left: 6px;
+  padding-top: 10px;
+}
+
+.delete-all-container {
+  padding-bottom: 20px;
+}
+
+.slider-darkmode {
+  color: var(--button-white);
+  border-bottom: 2px solid var(--button-white);
+}
+
+.slider-lightmode {
+  color: var(--button-black);
+  border-bottom: 2px solid var(--button-black);
+}
+
+.advanced-filters {
+  border: 2px solid;
+  padding: 20px;
+  border-radius: 10px;
+  padding-bottom: 30px;
+}
+
+.filters-outline {
+  padding-left: 20px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+.filters-light {
+  border-color: var(--background-dark-grey);
+}
+
+.filters-dark {
+  border-color: var(--background-white);
+}
+
+.background-light {
+  background-color: var(--button-white);
+}
+
+.background-dark {
+  background-color: var(--background-dark-grey);
+}

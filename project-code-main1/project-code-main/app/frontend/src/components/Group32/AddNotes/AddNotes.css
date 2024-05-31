@@ -1,0 +1,41 @@
+.add-notes-container {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.advanced-filters-container {
+    padding: 20px;
+    border: 2px solid;
+    padding: 20px;
+    border-radius: 10px; 
+    padding-bottom: 30px;
+    overflow: 'scroll';
+}
+
+.flex-container {
+    flex-direction: row;
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.notes-title {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.close-button {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.notes-textarea {
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    height: 150px;
+}

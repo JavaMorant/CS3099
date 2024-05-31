@@ -1,0 +1,161 @@
+/**
+ * CSS file for the PlayerCard component.
+ * 
+ * FILEPATH: /project-code/app/frontend/src/group33/components/playercard/PlayerCard.css
+ * 
+ * This file contains the styling rules for the PlayerCard component.
+ * It defines the colors, layout, and typography used in the component.
+ * The PlayerCard component is a card that displays information about a player.
+ * It includes the player's image, name, country, team, rating, position, and additional data.
+ * Contains primary and secondary colour to allow for easy colour changes, for better accesability.
+ */
+:root {
+  --primary-color: rgb(0, 0, 128);
+  --secondary-color: rgb(173, 216, 230);
+  --tertiary-color: rgb(211, 211, 211);
+  --text-color: black;
+  --secondary-text-color: #808080;
+  --divider-color: black;
+  --individual-scores-color: black;
+
+  --original-primary-color:  rgb(0, 0, 128);
+  --original-secondary-color:rgb(173, 216, 230);
+  --original-tertiary-color: rgb(211, 211, 211);
+  --original-text-color: black;
+  --original-secondary-text-color:#808080;
+  --original-divider-color: black;
+  --original-individual-scores-color:  black;
+
+  --cb-primary-color:rgb(2, 0, 36);
+  --cb-secondary-color:  rgba(9, 9, 121, 1);
+  --cb-tertiary-color: rgba(0, 212, 255, 1);
+  --cb-text-color: #ffd700;
+  --cb-secondary-text-color: #000080;
+  --cb-divider-color: black;
+  --cb-individual-scores-color:  #d3d3d3;
+}
+
+.player-card {
+  height: 490px;
+  width: 300px;
+  background: linear-gradient(
+    180deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 34%,
+    var(--tertiary-color) 100%
+  );
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.player-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-img {
+  width: 90%; /* Fill the width of the container */
+  height: 100%; /* Fill the height of the container */
+  margin-right: 10px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.player-badges {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge {
+  width: 45px;
+  margin: 15px 0 0 0;
+}
+
+.player-name {
+  font-size: 22px;
+  font-weight: 900;
+  margin-top: 15px;
+  color: var(--text-color);
+  font-family: 'Kanit', sans-serif;
+}
+
+.player-country,
+.player-team {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.player-country img,
+.player-team img {
+  width: 25px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.player-rating {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: var(--text-color);
+}
+
+.player-position {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--secondary-text-color);
+}
+
+.player-data-left,
+.player-data-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  padding: 5px;
+}
+
+.player-data-left {
+  margin-right: -60px;
+}
+
+.player-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.player-data-left div,
+.player-data-right div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.player-data-left h3,
+.player-data-right h3 {
+  margin: 0 5px 0 0;
+  font-size: 24px;
+  color: var(--individual-scores-color);
+}
+
+.player-data-left span,
+.player-data-right span {
+  font-size: 16px;
+  color: var(--primary-text-color);
+  margin: 0;
+}
+
+.black-divider {
+  height: 3px;
+  background-color: var(--divider-color);
+  margin: 0;
+  width: 100%;
+}

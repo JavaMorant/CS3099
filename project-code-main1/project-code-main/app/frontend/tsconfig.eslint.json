@@ -1,0 +1,15 @@
+// Special typescript project file, used by eslint only.
+// https://stackoverflow.com/questions/64271575/error-with-my-eslintrc-js-file-parsing-error-parseroptions-project-has/64283139#64283139
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    // repeated from base config's "include" setting
+    "src",
+
+    // these are the eslint-only inclusions
+    ".eslintrc.cjs",
+    "tailwind.config.js",
+    "postcss.config.js",
+    "vite.config.ts"
+  ]
+}

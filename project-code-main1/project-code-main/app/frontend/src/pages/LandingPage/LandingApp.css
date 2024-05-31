@@ -1,0 +1,74 @@
+.LandingApp {
+  text-align: center;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #E3E4E5;
+  overflow-x: hidden;
+  min-height: 100vh;
+  overflow-y: visible;/* Ensure the body takes at least the viewport height */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 20px 0; /* Add some padding to the top and bottom */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  z-index: 1000;
+}
+
+@keyframes slideInFromBelow {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideInFromBelow 0.8s ease-out forwards;
+}

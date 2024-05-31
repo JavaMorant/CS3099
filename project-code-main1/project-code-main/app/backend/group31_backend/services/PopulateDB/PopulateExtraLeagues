@@ -1,0 +1,88 @@
+# Populate extra leagues if error occurs just jump onto the next league ID
+
+
+import sqlite3
+import time
+from player_service import  getPlayersByTeamId
+from teams_service import  getLeagueTeams_wikidata
+
+
+
+
+def fetch_league_ids():
+    league_ids = []
+    try:
+        conn = sqlite3.connect("Database31HardCodedcopy.db")
+        cursor = conn.cursor()
+        cursor.execute("SELECT LeagueID FROM Leagues")
+        league_ids = [league[0] for league in cursor.fetchall()]
+    except sqlite3.Error as e:
+        print(f"Error fetching league IDs: {e}")
+    finally:
+        conn.close()
+    return league_ids
+
+
+def populate_database(leagueID):
+    print(f'Populating database for {leagueID}')
+    try:
+        teams = getLeagueTeams_wikidata(leagueID)
+        if teams:
+            insert_teams(teams, leagueID)
+            populate_players(teams)
+            time.sleep(5)
+            print("Database was populated for league:", leagueID)
+        else:
+            print(f"Skipping league {leagueID} due to fetch error or rate limiting.")
+            time.sleep(5)
+    except Exception as e:
+        print(f"General error with league {leagueID}: {e}")
+
+def insert_teams(teams, leagueID):
+    conn = sqlite3.connect("Database31HardCodedcopy.db")
+    cursor = conn.cursor()
+    for team in teams:
+        team_list = [getattr(team, 'id'), getattr(team, 'name'), getattr(team, 'logo'),
+                     getattr(team, 'colour'), leagueID, getattr(team, 'stadiumName'),
+                     getattr(team, 'inception')]
+        cursor.execute('''
+                       INSERT OR IGNORE INTO Teams (teamId, name, logo, colour, leagueID, stadiumName, inception)
+                       VALUES (?, ?, ?, ?, ?, ?, ?)
+                       ''', team_list)
+    conn.commit()
+    conn.close()
+    print("Teams inserted successfully.")
+
+
+def populate_players(teams):
+    conn = sqlite3.connect("Database31HardCodedcopy.db")
+    cursor = conn.cursor()
+    total_players = 0
+    for team in teams:
+        try:
+            players = getPlayersByTeamId(getattr(team, 'id'))
+            for player in players:
+                player_list = [getattr(player, 'id'), getattr(player, 'name'), getattr(player, 'years_played'),
+                               getattr(player, 'teamID'), getattr(player, 'DOB'), getattr(player, 'citizenship'),
+                               getattr(player, 'position'), getattr(player, 'birthName')]
+                cursor.execute('''
+                            INSERT OR IGNORE INTO Players (playerId, name, years_played, teamID, DOB, citizenship, position, birthName)
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                            ''', player_list)
+                total_players += 1
+            print(f"{getattr(team, 'name')} players inserted successfully.")
+        except Exception as e:
+            print(f"Skipping team {getattr(team, 'id')} due to error: {e}")
+            continue  # Skip to next team on error
+    conn.commit()
+    conn.close()
+    print(f"Total players inserted: {total_players}")
+
+
+def main():
+    league_ids = fetch_league_ids()
+    for league_id in league_ids:
+        populate_database(league_id)
+
+if __name__ == "__main__":
+    main()

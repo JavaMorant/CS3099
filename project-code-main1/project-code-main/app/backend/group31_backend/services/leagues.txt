@@ -1,0 +1,26 @@
+Q3424867-La LiLiga
+Q35615 - Segunda Division
+Q100146559 - Primera Federation
+
+UK
+Q9448 Premier League
+Q19610 EFL
+Q19565 EFL D!
+
+Italy
+Q15804 Serie A
+Q194052 Serie B
+Q607965 Serie C
+France
+Q13394 - Ligue 1
+Q217374 Ligue 2
+
+USA
+Q18543 MLS
+
+Scotland
+Q14377162 Scottish Premiership
+Q14468438 Scottish Championship
+
+Germany
+Q82595 Bundesliga

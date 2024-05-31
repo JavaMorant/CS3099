@@ -1,0 +1,2105 @@
+{
+  "components": {
+    "schemas": {
+      "Coordinates": {
+        "properties": {
+          "lat": {
+            "title": "Lat",
+            "type": "number"
+          },
+          "lng": {
+            "title": "Lng",
+            "type": "number"
+          }
+        },
+        "required": [
+          "lat",
+          "lng"
+        ],
+        "title": "Coordinates",
+        "type": "object"
+      },
+      "Countries": {
+        "properties": {
+          "countries": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Countries",
+            "type": "array"
+          }
+        },
+        "required": [
+          "countries"
+        ],
+        "title": "Countries",
+        "type": "object"
+      },
+      "Country": {
+        "description": "Represents a country with an ID, name, and flag.\n\nAttributes:\n-----------\n    id (str): The unique identifier for the country.\n    name (str): The name of the country.\n    flag (str): The URL of the flag image for the country.",
+        "properties": {
+          "flag": {
+            "title": "Flag",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "flag"
+        ],
+        "title": "Country",
+        "type": "object"
+      },
+      "ErrorLog": {
+        "properties": {
+          "component_stack": {
+            "title": "Component Stack",
+            "type": "string"
+          },
+          "error": {
+            "title": "Error",
+            "type": "string"
+          }
+        },
+        "required": [
+          "error",
+          "component_stack"
+        ],
+        "title": "ErrorLog",
+        "type": "object"
+      },
+      "ErrorResponse": {
+        "properties": {
+          "error": {
+            "title": "Error",
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "title": "ErrorResponse",
+        "type": "object"
+      },
+      "League": {
+        "properties": {
+          "country": {
+            "title": "Country",
+            "type": "string"
+          },
+          "league": {
+            "title": "League",
+            "type": "string"
+          },
+          "league_id": {
+            "title": "League Id",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "league_id",
+          "league",
+          "country"
+        ],
+        "title": "League",
+        "type": "object"
+      },
+      "Leagues": {
+        "properties": {
+          "leagues": {
+            "items": {
+              "$ref": "#/components/schemas/League"
+            },
+            "title": "Leagues",
+            "type": "array"
+          }
+        },
+        "required": [
+          "leagues"
+        ],
+        "title": "Leagues",
+        "type": "object"
+      },
+      "PlayerGroup33": {
+        "description": "Represents a player in the system.\n\nAttributes:\n-----------\n- id (str): The unique identifier for the player.\n- name (str): The name of the player.\n- citizenships (Country): A countries that the player holds citizenship for.\n- DOB (str): The date of birth of the player.\n- height (str): The height of the player.\n- position (str): A position the player can play.\n- career_start (str): The year the player started their professional career.\n- image_url (str): A list of URL to images of the player.\n- teamId (str): The unique identifier for the team the player is currently playing for.\n- teamBadge_URL (str): The URL to the image of the badge of the team the player is currently playing for.\n- fbrefId (str): The id of the player on fbref",
+        "properties": {
+          "DOB": {
+            "title": "Dob",
+            "type": "string"
+          },
+          "career_start": {
+            "title": "Career Start",
+            "type": "string"
+          },
+          "citizenship": {
+            "$ref": "#/components/schemas/Country"
+          },
+          "defending": {
+            "title": "Defending",
+            "type": "string"
+          },
+          "dribbling": {
+            "title": "Dribbling",
+            "type": "string"
+          },
+          "fbrefId": {
+            "title": "Fbrefid",
+            "type": "string"
+          },
+          "height": {
+            "title": "Height",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "image_url": {
+            "title": "Image Url",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "ovrall": {
+            "title": "Ovrall",
+            "type": "string"
+          },
+          "passing": {
+            "title": "Passing",
+            "type": "string"
+          },
+          "physicality": {
+            "title": "Physicality",
+            "type": "string"
+          },
+          "playmaking": {
+            "title": "Playmaking",
+            "type": "string"
+          },
+          "position": {
+            "title": "Position",
+            "type": "string"
+          },
+          "shooting": {
+            "title": "Shooting",
+            "type": "string"
+          },
+          "teamBadge_URL": {
+            "title": "Teambadge Url",
+            "type": "string"
+          },
+          "teamId": {
+            "title": "Teamid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "citizenship",
+          "DOB",
+          "height",
+          "position",
+          "career_start",
+          "image_url",
+          "teamId",
+          "fbrefId",
+          "teamBadge_URL",
+          "ovrall",
+          "dribbling",
+          "shooting",
+          "passing",
+          "physicality",
+          "playmaking",
+          "defending"
+        ],
+        "title": "PlayerGroup33",
+        "type": "object"
+      },
+      "PlayerGroup33_extra": {
+        "properties": {
+          "assists": {
+            "title": "Assists",
+            "type": "string"
+          },
+          "defending": {
+            "title": "Defending",
+            "type": "string"
+          },
+          "dribbling": {
+            "title": "Dribbling",
+            "type": "string"
+          },
+          "goals": {
+            "title": "Goals",
+            "type": "string"
+          },
+          "passing": {
+            "title": "Passing",
+            "type": "string"
+          },
+          "physicality": {
+            "title": "Physicality",
+            "type": "string"
+          },
+          "playmaking": {
+            "title": "Playmaking",
+            "type": "string"
+          },
+          "shooting": {
+            "title": "Shooting",
+            "type": "string"
+          },
+          "shots": {
+            "title": "Shots",
+            "type": "string"
+          },
+          "sot": {
+            "title": "Sot",
+            "type": "string"
+          },
+          "tackles_won": {
+            "title": "Tackles Won",
+            "type": "string"
+          },
+          "tackles_won_pct": {
+            "title": "Tackles Won Pct",
+            "type": "string"
+          }
+        },
+        "required": [
+          "goals",
+          "assists",
+          "sot",
+          "tackles_won",
+          "tackles_won_pct",
+          "shots",
+          "dribbling",
+          "shooting",
+          "passing",
+          "physicality",
+          "playmaking",
+          "defending"
+        ],
+        "title": "PlayerGroup33_extra",
+        "type": "object"
+      },
+      "PlayerResponse": {
+        "description": "Represents a Player ID response\nplayer_id (str) - id of player",
+        "properties": {
+          "player_id": {
+            "title": "Player Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "player_id"
+        ],
+        "title": "PlayerResponse",
+        "type": "object"
+      },
+      "PlayersResponseGroup33": {
+        "description": "A response model for a list of players.\n\nAttributes:\n-----------\nplayerList (list[PlayerGroup33]): A list of Player objects.",
+        "properties": {
+          "playerList": {
+            "items": {
+              "$ref": "#/components/schemas/PlayerGroup33"
+            },
+            "title": "Playerlist",
+            "type": "array"
+          }
+        },
+        "required": [
+          "playerList"
+        ],
+        "title": "PlayersResponseGroup33",
+        "type": "object"
+      },
+      "Stadium": {
+        "properties": {
+          "capacity": {
+            "minimum": 0.0,
+            "title": "Capacity",
+            "type": "integer"
+          },
+          "coordinates": {
+            "$ref": "#/components/schemas/Coordinates"
+          },
+          "country": {
+            "title": "Country",
+            "type": "string"
+          },
+          "image_url": {
+            "title": "Image Url",
+            "type": "string"
+          },
+          "league_id": {
+            "title": "League Id",
+            "type": "string"
+          },
+          "location_desc": {
+            "title": "Location Desc",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "team": {
+            "title": "Team",
+            "type": "string"
+          },
+          "team_id": {
+            "title": "Team Id",
+            "type": "string"
+          },
+          "year": {
+            "title": "Year",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "team_id",
+          "team",
+          "league_id",
+          "name",
+          "coordinates",
+          "capacity",
+          "country",
+          "year",
+          "image_url",
+          "location_desc"
+        ],
+        "title": "Stadium",
+        "type": "object"
+      },
+      "StadiumForm": {
+        "properties": {
+          "capacity": {
+            "minimum": 0.0,
+            "title": "Capacity",
+            "type": "integer"
+          },
+          "coordinates": {
+            "$ref": "#/components/schemas/Coordinates"
+          },
+          "league": {
+            "title": "League",
+            "type": "string"
+          },
+          "stadium-name": {
+            "title": "Stadium-Name",
+            "type": "string"
+          },
+          "team-name": {
+            "title": "Team-Name",
+            "type": "string"
+          },
+          "year": {
+            "title": "Year",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "stadium-name",
+          "capacity",
+          "coordinates",
+          "year",
+          "team-name",
+          "league"
+        ],
+        "title": "StadiumForm",
+        "type": "object"
+      },
+      "StadiumFormResponse": {
+        "properties": {
+          "stadium_id": {
+            "title": "Stadium Id",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "stadium_id"
+        ],
+        "title": "StadiumFormResponse",
+        "type": "object"
+      },
+      "Stadiums": {
+        "properties": {
+          "stadiums": {
+            "items": {
+              "$ref": "#/components/schemas/Stadium"
+            },
+            "title": "Stadiums",
+            "type": "array"
+          }
+        },
+        "required": [
+          "stadiums"
+        ],
+        "title": "Stadiums",
+        "type": "object"
+      },
+      "TeamGroup33": {
+        "description": "Represents a team in the application.\n\nAttributes:\n-----------\n    id (str): The unique identifier for the team.\n    name (str): The name of the team.\n    image_url (str): The URL for the team's image.",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "image_url": {
+            "title": "Image Url",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "image_url"
+        ],
+        "title": "TeamGroup33",
+        "type": "object"
+      },
+      "TeamWithPlayers": {
+        "description": "A model representing a team and its players.\n\nAttributes:\n-----------\nteam : Team\n    The team object.\nplayers : list[Player]\n    A list of player objects belonging to the team.",
+        "properties": {
+          "players": {
+            "items": {
+              "$ref": "#/components/schemas/PlayerGroup33"
+            },
+            "title": "Players",
+            "type": "array"
+          },
+          "team": {
+            "$ref": "#/components/schemas/TeamGroup33"
+          }
+        },
+        "required": [
+          "team",
+          "players"
+        ],
+        "title": "TeamWithPlayers",
+        "type": "object"
+      },
+      "TeamWithPlayersResponse": {
+        "description": "A response model representing a team with its players.\n\nAttributes:\n-----------\nteamWithPlayers : TeamWithPlayers\n    The team with its players.",
+        "properties": {
+          "teamWithPlayers": {
+            "$ref": "#/components/schemas/TeamWithPlayers"
+          }
+        },
+        "required": [
+          "teamWithPlayers"
+        ],
+        "title": "TeamWithPlayersResponse",
+        "type": "object"
+      },
+      "TeamsResponseGroup33": {
+        "description": "A response model for a list of teams.\n\nAttributes:\n-----------\nteamList (list[Team]): A list of Team objects.",
+        "properties": {
+          "teamList": {
+            "items": {
+              "$ref": "#/components/schemas/TeamGroup33"
+            },
+            "title": "Teamlist",
+            "type": "array"
+          }
+        },
+        "required": [
+          "teamList"
+        ],
+        "title": "TeamsResponseGroup33",
+        "type": "object"
+      },
+      "ValidationErrorModel": {
+        "properties": {
+          "ctx": {
+            "description": "an optional object which contains values required to render the error message.",
+            "title": "Error context",
+            "type": "object"
+          },
+          "loc": {
+            "description": "the error's location as a list. ",
+            "items": {
+              "type": "string"
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "description": "a computer-readable identifier of the error type.",
+            "title": "Message",
+            "type": "string"
+          },
+          "type_": {
+            "description": "a human readable explanation of the error.",
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "title": "ValidationErrorModel",
+        "type": "object"
+      },
+      "teamTemp": {
+        "properties": {
+          "teamTemp": {
+            "title": "Teamtemp",
+            "type": "string"
+          }
+        },
+        "required": [
+          "teamTemp"
+        ],
+        "title": "teamTemp",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "description": "Backend for the Sport Supergroup project",
+    "title": "Sport Supergroup Backend",
+    "version": "0.0.1"
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/api/club/": {
+      "get": {
+        "operationId": "getClubByID_api_club__get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/teamTemp"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/api/clubname/": {
+      "get": {
+        "operationId": "getClubnameByID_api_clubname__get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/teamTemp"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/api/clubs/": {
+      "get": {
+        "operationId": "getClubsByLeagueID_api_clubs__get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/teamTemp"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/api/countries": {
+      "get": {
+        "description": "Retrieves list of countries",
+        "operationId": "get_countries_api_countries_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Countries"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "required": true
+        },
+        "responses": {
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          }
+        },
+        "tags": [
+          "countries"
+        ]
+      }
+    },
+    "/api/countries/": {
+      "get": {
+        "operationId": "getCountries_api_countries__get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/teamTemp"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/api/clubs/": {
+      "get": {
+        "operationId": "getClubsByLeagueID_api_clubs__get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/teamTemp"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/api/countries": {
+      "get": {
+        "description": "Retrieves list of countries",
+        "operationId": "get_countries_api_countries_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Countries"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "required": true
+        },
+        "responses": {
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/database": {
+      "get": {
+        "description": "Repopulates the stadiums database with updated information.",
+        "operationId": "populate_database_api_database_get",
+        "responses": {}
+      }
+    },
+    "/api/fullPlayerPredictiveLeague/{name}": {
+      "get": {
+        "description": "that share the same nationality as the player, and then find where they played next.</br>Returns the top 5 leagues with the most players.</br>Returns an error message according to lack of information depending on ID, League, Nation or Probability",
+        "operationId": "predictnextLeagues_api_fullPlayerPredictiveLeague__string_name__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "summary": "Given a player name, uses a combination of previous methods to find 100 players that played in the same league",
+        "tags": [
+          "Players"
+        ]
+      }
+    },
+    "/api/getPlayerInfo/{name}": {
+      "get": {
+        "description": "Returns an error message if the playerID does not exist.",
+        "operationId": "get_PlayerInfo_api_getPlayerInfo__string_name__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "summary": "Given a player ID, returns the player's birthday, height and weight given they exists in WikiData.",
+        "tags": [
+          "Players"
+        ]
+      }
+    },
+    "/api/getTournaments/{name}": {
+      "get": {
+        "description": "    Tournament Name - string</br>    Tournament Date - string</br>Returns an error message if the playerID does not exist",
+        "operationId": "get_Tournaments_api_getTournaments__string_name__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "summary": "Given a player name, returns for each tournament they have participated in:",
+        "tags": [
+          "Players"
+        ]
+      }
+    },
+    "/api/playerData/{name}": {
+      "get": {
+        "description": "Retrieves list of leagues",
+        "operationId": "get_leagues_api_leagues_get",
+        "parameters": [
+          {
+            "description": "List of countries to display",
+            "in": "query",
+            "name": "countries",
+            "required": false,
+            "schema": {
+              "description": "List of countries to display",
+              "items": {
+                "type": "string"
+              },
+              "title": "Countries",
+              "type": "array"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Leagues"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "tags": [
+          "leagues"
+        ]
+      }
+    },
+    "/api/leagues/": {
+      "get": {
+        "operationId": "getLeaguesByCountryID_api_leagues__get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/teamTemp"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/api/logging": {
+      "post": {
+        "operationId": "log_message_api_logging_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ErrorLog"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "tags": [
+          "logging"
+        ]
+      }
+    },
+    "/api/leagues": {
+      "get": {
+        "description": "Retrieves list of leagues",
+        "operationId": "get_leagues_api_leagues_get",
+        "parameters": [
+          {
+            "description": "List of countries to display",
+            "in": "query",
+            "name": "countries",
+            "required": false,
+            "schema": {
+              "description": "List of countries to display",
+              "items": {
+                "type": "string"
+              },
+              "title": "Countries",
+              "type": "array"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Leagues"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "tags": [
+          "leagues"
+        ]
+      }
+    },
+    "/api/leagues/": {
+      "get": {
+        "operationId": "getLeaguesByCountryID_api_leagues__get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/teamTemp"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/api/logging": {
+      "post": {
+        "operationId": "log_message_api_logging_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ErrorLog"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "tags": [
+          "logging"
+        ]
+      }
+    },
+    "/api/newsArticles/{id}": {
+      "get": {
+        "description": "    Article Name - string</br>    Article link - string</br>Returns an error message if the playerID does not exist",
+        "operationId": "get_newsArticles_api_newsArticles__string_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "summary": "Given a player ID, returns for each of the top 5 news articles about them:",
+        "tags": [
+          "Players"
+        ]
+      }
+    },
+    "/api/node_data/": {
+      "get": {
+        "operationId": "getPlayersByTeamID_api_node_data__get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/teamTemp"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/api/node_player/": {
+      "get": {
+        "operationId": "getPlayerByID_api_node_player__get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/teamTemp"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/api/teamData/{id}": {
+      "get": {
+        "description": "Get additinal data for a player using their QID (e.g. Q50602 for a specific player)",
+        "operationId": "get_player_extra_by_ID_api_player_extra__string_player_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "player_id",
+            "required": true,
+            "schema": {
+              "title": "Player Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerGroup33_extra"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "summary": "Retrieve a player by player Q-number.",
+        "tags": [
+          "players"
+        ]
+      }
+    },
+    "/api/player/name/{name}": {
+      "get": {
+        "description": "Get players by name (e.g. Messi for all players named Messi)",
+        "operationId": "get_players_by_Name_api_player_name__string_name__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayersResponseGroup33"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "summary": "Retrieve players by Name.",
+        "tags": [
+          "players"
+        ]
+      }
+    },
+    "/api/player/{player_id}": {
+      "get": {
+        "description": "Get a player by player Q-number (e.g. Q50602 for a specific player)",
+        "operationId": "get_player_by_ID_api_player__string_player_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "player_id",
+            "required": true,
+            "schema": {
+              "title": "Player Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerGroup33"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "summary": "Retrieve a player by player Q-number.",
+        "tags": [
+          "players"
+        ]
+      }
+    },
+    "/api/playerData/{name}": {
+      "get": {
+        "description": "If it is not found, returns an error response",
+        "operationId": "get_player_Id_api_playerData__string_name__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "summary": "Returns a player's WikiData ID given the player's name, if it is found in the database.",
+        "tags": [
+          "Players"
+        ]
+      }
+    },
+    "/api/players/{team_id}": {
+      "get": {
+        "description": "Get all players from a team by team Q-number (e.g. Q9439 for Arsenal F.C.) and their Q-numbers",
+        "operationId": "get_team_players_api_players__string_team_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "team_id",
+            "required": true,
+            "schema": {
+              "title": "Team Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayersResponseGroup33"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "summary": "Retrieve all players from a team by team Q-number and their Q-numbers.",
+        "tags": [
+          "players"
+        ]
+      }
+    },
+    "/api/stadiums": {
+      "get": {
+        "description": "Retrieves list of stadiums with optional filtering",
+        "operationId": "get_stadiums_api_stadiums_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "min-capacity",
+            "required": false,
+            "schema": {
+              "minimum": 0.0,
+              "title": "Min-Capacity",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "max-capacity",
+            "required": false,
+            "schema": {
+              "minimum": 0.0,
+              "title": "Max-Capacity",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "List of countries to display",
+            "in": "query",
+            "name": "countries",
+            "required": false,
+            "schema": {
+              "description": "List of countries to display",
+              "items": {
+                "type": "string"
+              },
+              "title": "Countries",
+              "type": "array"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Stadiums"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "tags": [
+          "query_endpoint"
+        ]
+      },
+      "post": {
+        "description": "Inserts given data in to the database",
+        "operationId": "insert_stadiums_api_stadiums_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StadiumForm"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StadiumFormResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "tags": [
+          "query_endpoint"
+        ]
+      }
+    },
+    "/api/teamData/{id}": {
+      "get": {
+        "description": "    Team Name - string</br>    Start Date - string</br>    End Date (if it exists) - string</br>    Stadium Name (if it exists) - string</br>    Stadium Coordinates (if it exists) - list of floats</br>    Goals for team (if it exists) - string</br>    Appearances for team (if it exists) - string</br>Returns an error message if the playerID does not exist",
+        "operationId": "get_Team_api_teamData__string_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "summary": "Given a player ID, returns for each team they've played for:",
+        "tags": [
+          "Players"
+        ]
+      }
+    },
+    "/api/teams": {
+      "get": {
+        "description": "Get all teams in the Premier League (Q9448) and their Q-numbers",
+        "operationId": "get_premier_league_teams_api_teams_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamsResponseGroup33"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          }
+        },
+        "summary": "Returns a list of all teams and their Q-numbers.",
+        "tags": [
+          "teams"
+        ]
+      }
+    },
+    "/api/teams_with_players/{team_id}": {
+      "get": {
+        "description": "Get all teams in the Premier League (Q9448) and their Q-numbers",
+        "operationId": "get_teams_with_players_by_id_api_teams_with_players__string_team_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "team_id",
+            "required": true,
+            "schema": {
+              "title": "Team Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamWithPlayersResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationErrorModel"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          }
+        },
+        "summary": "Retrieve the team with the given ID, along with its players.",
+        "tags": [
+          "teams"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "description": "Players operations",
+      "name": "Players"
+    },
+    {
+      "description": "Querying DB",
+      "name": "query_endpoint"
+    },
+    {
+      "description": "Retrieving the list of countries",
+      "name": "countries"
+    },
+    {
+      "description": "Retrieving league data",
+      "name": "leagues"
+    },
+    {
+      "description": "Retrieving the list of countries",
+      "name": "countries"
+    },
+    {
+      "description": "Retrieving league data",
+      "name": "leagues"
+    },
+    {
+      "description": "Logging messages",
+      "name": "logging"
+    },
+    {
+      "description": "Teams operations",
+      "name": "teams"
+    },
+    {
+      "description": "Player operations",
+      "name": "players"
+    }
+  ]
+}

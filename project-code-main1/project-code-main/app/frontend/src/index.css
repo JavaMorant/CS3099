@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Jakarta';
+  src: url('../PlusJakartaSans-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../Inter-VariableFont_slnt,wght.ttf');
+}
+
+#root {
+  @apply flex h-screen flex-col bg-gray-300 font-inter text-base text-black;
+}

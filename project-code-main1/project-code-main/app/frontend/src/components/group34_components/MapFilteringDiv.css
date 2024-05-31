@@ -1,0 +1,7 @@
+.rootElement > * {
+  overflow: visible !important;
+}
+
+.item-renderer > input {
+  transform: scale(1);
+}

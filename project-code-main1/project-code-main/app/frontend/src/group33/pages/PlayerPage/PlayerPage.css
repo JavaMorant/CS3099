@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('../../assets/fonts/Lobster-Regular.ttf');
+}
+
+.myfont {
+    margin-top: 25px;
+    font-family: 'MyFont';
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.player_image {
+    height: 480px;
+    width: 480px;
+    object-fit: cover;
+    object-position: center top; 
+    overflow: hidden; 
+    border-radius: 90px;
+}
+
+.wholePage_container {
+    position: relative;
+    background-color: #ffffff;
+    background-size: cover; 
+    background-position: center; 
+    width: 100%;
+    height: 1230px; 
+    background-image: url(../../assets/images/playerPage/background.jpg);
+}
+
+.chart_container1 {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 100px;
+    border-color: #847f83;
+    border-width: 1ch;
+    position: absolute;
+    background-color: #ffffff;
+    height: 500px;
+    width: 500px;
+    margin-top: 0px;
+    margin-left: 400px;
+}
+
+.chart_container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border-color: #847f83;
+    border-width: 1ch;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+    width: 500px;
+    margin-left: 1100px;
+}
+
+.chart_container3 {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 100px;
+    border-color: #847f83;
+    border-width: 1ch;
+    position: absolute;
+    background-color: #ffffff;
+    height: 500px;
+    width: 500px;
+    margin-top: 550px;
+    margin-left: 400px;
+}
+
+.chart_container4 {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 100px;
+    border-color: #847f83;
+    border-width: 1ch;
+    position: absolute;
+    background-color: #ffffff;
+    height: 500px;
+    width: 500px;
+    margin-top: 550px;
+    margin-left: 1100px;
+}
+
+.applyBlur {
+    filter: blur(4px);
+    transition: filter 0.5s ease; 
+}
+
+.chart_container {
+    position: absolute; 
+}
+
+.closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;  
+    height: 40px;
+    border: none; 
+    border-radius: 50%;
+    background-image: url('../../assets/images/buttonPics/close.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer; 
+    background-color: transparent;
+    transition: transform 0.2s ease;
+    z-index: 2;
+}
+
+.closeButton:hover {
+    transform: scale(1.2); 
+    background-color: transparent;
+    border: none;
+    outline: none; 
+}
+
+.errorPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    font-size: 50px; 
+    text-align: center; 
+}
+
+.goBackButton{
+    color: white;
+    transition: 0.5s;
+}
+  
+.goBackButton:hover{
+    scale: 1.1;
+}

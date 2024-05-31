@@ -1,0 +1,438 @@
+.club-selection-container {
+  display: flex;
+  min-height: 500px;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.clublink-banner {
+  width: 100%;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.clublink-banner clublink-logo {
+  max-width: 100%; /* Ensure the image is responsive and fits its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.club-selection-box {
+  width: 100%;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 20px 0; /* Add padding inside the box for content */
+  position: relative; /* Needed for absolute positioning of the text */
+  margin: 30px 0;
+}
+
+.club-info {
+  display: flex;
+  flex-direction: column; /* Stack the options vertically */
+  align-items: center; /* Center align the options */
+  gap: 20px; /* Add space between each option */
+  font-weight: bold;
+}
+
+.club-option {
+  background-color: #f7f6f5;
+  border-radius: 8px; /* Rounded corners as requested */
+  width: 400px; /* Make each box take the full width available */
+  height: 100px; /* Example height; adjust as needed */
+}
+
+.club-selection-text {
+  position: absolute;
+  text-align: left; /* Align text to the left */
+  bottom: 60px; /* Position text at the bottom left of the container */
+  left: 50px; /* Align with the padding of the container */
+  margin: 0; /* Remove default margins */
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Styling for each selection box */
+.selection-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px; /* Fixed width for the selection box */
+  background-color: #22e39f; /* Default background color */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Hover effect for the selection box */
+.selection-box:hover {
+  background-color: #7ccbab; /* Light grey background on hover */
+}
+
+/* Style for the navigation arrows */
+.selection-box button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0 15px;
+  color: white; /* Adjust color as needed */
+}
+
+/* Style for the images (flags, league logos, club crests) */
+.selection-box .arrow-icon {
+  width: 50px; /* Fixed width for images */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Style specifically for the flag images to ensure consistent size */
+.flag-img {
+  width: 30px; /* Adjust based on actual size preference */
+}
+
+/* Style for the league and club images */
+.league-img {
+  width: 200px; /* Adjust width automatically to maintain aspect ratio */
+}
+
+/* Text style for the selection names */
+.selection-text {
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Adjustments for selection box containing the club crest and text */
+.selection-box .club-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the content vertically */
+  gap: 5px; /* Space between the crest and the text */
+  padding: 20px 0px;
+}
+
+/* Style adjustments for the club crest image */
+.selection-box .club-info img {
+  margin-top: 10px; /* Adjust margin as needed for visual spacing */
+  height: 140px;
+  width: auto; /* Adjust width as necessary */
+}
+
+/* Text style adjustments for the club name */
+.selection-box .club-info .club-name {
+  font-size: 16px; /* Adjust font size as necessary */
+  text-align: center;
+}
+
+.country-info {
+  display: flex;
+  justify-content: flex-start;
+  height: 50px;
+  align-items: center; /* Align items vertically in the center */
+  justify-content: space-between; /* Optional: Adjust based on your design needs */
+}
+
+.country-info div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.country-info img {
+  display: flex; /* Ensure this also applies flexbox for internal alignment */
+  align-items: center;
+  height: 30px; /* Maintain aspect ratio */
+  width: auto; /* Adjust width as necessary */
+  max-width: 50px;
+}
+
+.country-info .country-name {
+  display: flex; /* Ensure this also applies flexbox for internal alignment */
+  align-items: center;
+  font-size: 16px; /* Adjust based on your design preference */
+  text-align: center;
+  font-weight: bold;
+}
+
+.club-container {
+  height: 200px;
+}
+
+.league-info {
+  height: 70px;
+  font-weight: bold;
+}
+
+.league-info div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.league-info img {
+  height: 50px;
+  width: auto;
+}
+
+/* Existing styles */
+
+@keyframes slideText {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.third-section {
+  display: flex;
+  width: 100%;
+  align-items: stretch; /* This will ensure that both children stretch to fill the container */
+  justify-content: space-between;
+}
+
+.remainder-content {
+  flex-grow: 1;
+  background-color: #f5f5f5; /* Ensures the left box has a white background */
+  display: flex; /* Enables Flexbox for this container */
+  align-items: center; /* Vertically centers the flex items (content) */
+  justify-content: left; /* Horizontally centers the flex items (content) */
+  padding: 10px; /* Adjust padding as needed */
+  /* Add any additional styling as needed */
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.remainder-content p {
+  position: absolute;
+  font-size: 40px;
+  white-space: nowrap; /* Prevent text from wrapping */
+  animation: slideText 10s linear infinite; /* Apply the animation */
+}
+.square-box-button {
+  width: 120px; /* Fixed width for the square button */
+  height: 120px; /* Fixed height to maintain a square shape */
+  background-color: #22e39f; /* Background color, visible during image load or if image fails to load */
+  border-radius: 10px;
+  border: 0;
+  padding: 0; /* Remove padding to allow the image to fill the entire button */
+  overflow: hidden; /* Ensure no part of the image overflows the button's bounds */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 30px; /* Space between the two buttons */
+}
+
+.square-box-button .arrow {
+  width: 50%; /* Make the image fill the width of the button */
+  height: 50%; /* Make the image fill the height of the button */
+  fill: white;
+  opacity: 0.8;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+/* Hover effect for the square button */
+.square-box-button:hover {
+  background-color: #7ccbab;
+  transition: 0.3s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .third-section {
+    flex-direction: column;
+  }
+
+  .square-box-button {
+    width: 50vw; /* Adjust for responsiveness */
+    height: 50vw; /* Maintain 1x1 aspect ratio */
+    margin-top: 20px; /* Space from the left side content on smaller screens */
+  }
+}
+
+.featured {
+  text-align: center;
+  margin: 50px 0;
+  position: relative; /* For absolute positioning of navigation arrows */
+}
+
+.name {
+  color: #fff;
+  position: absolute;
+  bottom: 10px; /* Position at the bottom of the box */
+  left: 10px;
+  font-size: 16px; /* Adjust font size as needed */
+}
+
+/* Navigation arrows and other styles remain unchanged */
+
+.high-contrast-toggle {
+  position: absolute;
+  top: 20px; /* Adjusted for better positioning */
+  left: 20px; /* Keeps the 10% padding */
+  display: flex;
+  align-items: center;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px; /* Adjust if needed */
+  user-select: none; /* Prevent text selection */
+}
+
+.toggle-label input {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: relative;
+  width: 40px; /* Shortened width */
+  height: 24px; /* Adjust height if needed */
+  background-color: #ccc;
+  border-radius: 24px; /* Ensures rounded ends */
+  margin-left: 10px; /* Space between the label text and the slider */
+  transition: background-color 0.4s ease;
+}
+
+.toggle-slider:before {
+  content: '';
+  position: absolute;
+  width: 22px; /* Slightly smaller than the slider height for a circular appearance */
+  height: 22px;
+  left: 1px; /* Small space from the left for the circle to appear centered when off */
+  bottom: 1px; /* Centered vertically */
+  background-color: white;
+  transition: transform 0.2s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: #2196f3;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(16px); /* Moves the circle to the right when checked */
+}
+
+/* High Contrast Mode Styles */
+body.high-contrast .club-selection-container,
+body.high-contrast .clublink-banner,
+body.high-contrast .club-selection-box,
+body.high-contrast .club-option,
+body.high-contrast .selection-box,
+body.high-contrast .selection-box button,
+body.high-contrast .selection-text,
+body.high-contrast .club-container,
+body.high-contrast .third-section,
+body.high-contrast .square-box-button,
+body.high-contrast .featured,
+body.high-contrast .name {
+  background-color: #000; /* Dark background for better contrast */
+  color: #FFF; /* High contrast text color is now white */
+  border-color: #FFF; /* High contrast border color */
+}
+
+body.high-contrast .remainder-content{
+  background-color: #000; /* Dark background for better contrast */
+  border-width: 3PX;
+  border-color: #FFF; /* High contrast border color */
+}
+
+/* Specific inversion for clublink logo */
+body.high-contrast .clublink-logo {
+  filter: invert(100%);
+}
+
+/* Reverse the global image inversion, applying it only to specific images if needed */
+body.high-contrast img:not(.clublink-logo) {
+  filter: none;
+}
+
+/* Adjust background and text color for hover states to maintain white text */
+body.high-contrast .selection-box:hover,
+body.high-contrast .square-box-button:hover {
+  background-color: #555; /* Darker background for hover state */
+}
+
+/* Ensure all text is bold for readability */
+body.high-contrast * {
+  font-weight: bold;
+}
+
+/* Maintain white text for buttons and links */
+body.high-contrast .selection-box button,
+body.high-contrast .square-box-button {
+  color: #ff0; /* Maintain white text for clarity */
+}
+
+/* Additional adjustments as needed for specific controls or layout parts */
+body.high-contrast .toggle-slider,
+body.high-contrast .toggle-slider:before {
+  background-color: #FFF; /* Ensure slider is visible */
+}
+
+/* Maintain white text for key text elements */
+body.high-contrast .toggle-label,
+body.high-contrast .club-selection-text,
+body.high-contrast .selection-text,
+body.high-contrast .selection-box .club-info .club-name {
+  color: #000000; /* Text color is white for all these elements */
+}
+
+body.high-contrast .selection-box,
+body.high-contrast .club-option {
+  border: 2px solid #FFF; /* Make selection boxes stand out with white borders */
+}
+
+body.high-contrast input:checked + .toggle-slider {
+  background-color: #000000;
+}
+
+
+body.high-contrast .square-box-button {
+  width: 120px; /* Fixed width for the square button */
+  height: 120px; /* Fixed height to maintain a square shape */
+  background-color: #ffffff; /* Background color, visible during image load or if image fails to load */
+  border-radius: 10px;
+  border: 0;
+  padding: 0; /* Remove padding to allow the image to fill the entire button */
+  overflow: hidden; /* Ensure no part of the image overflows the button's bounds */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 30px; /* Space between the two buttons */
+}
+
+
+/* Styling for each selection box */
+body.high-contrast .selection-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px; /* Fixed width for the selection box */
+  background-color: #929292; /* Default background color */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+body.high-contrast .club-selection-box {
+  width: 100%;
+  background-color: #f5f5f5;      
+  border-radius: 20px;
+  padding: 20px 0; /* Add padding inside the box for content */
+  position: relative; /* Needed for absolute positioning of the text */
+  margin: 30px 0;
+}
+
+/* Style for the images (flags, league logos, club crests) */
+body.high-contrast .selection-box .arrow-icon {
+  background-color: #929292; 
+}

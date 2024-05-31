@@ -1,0 +1,115 @@
+## this file creates the tables CuratedCountries and CuratedLeagues for the landing page
+
+
+import sqlite3
+
+# Predefined list of LeagueIDs to fetch and insert
+league_ids = [
+    'Q324867', 'Q35615', 'Q100146559', 'Q9448', 'Q19510', 'Q19565',
+    'Q15804', 'Q194052', 'Q607965', 'Q13394', 'Q217374', 'Q18543',
+    'Q14377162', 'Q14468438', 'Q82595', 'Q152665', 'Q154069', 'Q255633','Q216022',
+    'Q233199','Q420970','Q167541'
+
+]
+
+country_ids = [
+    'Q21', 'Q29', 'Q38', 'Q142', 'Q183', 'Q851',
+    'Q31', 'Q16', 'Q145', 'Q55'
+]
+
+
+def create_curated_countries_table():
+    conn = sqlite3.connect("project-code/app/backend/group31_backend/database/Database31HardCodedV3.db")
+    cursor = conn.cursor()
+    # Create the CuratedCountries table with the same structure as Countries
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS CuratedCountries (
+            CountryID TEXT PRIMARY KEY,
+            name TEXT,
+            flag TEXT
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
+def create_curated_leagues_table():
+    conn = sqlite3.connect("project-code/app/backend/group31_backend/database/Database31HardCodedV3.db")
+    cursor = conn.cursor()
+    # Create the CuratedLeagues table with the same structure as Leagues
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS CuratedLeagues (
+            LeagueID TEXT PRIMARY KEY, 
+            name TEXT, 
+            logo TEXT, 
+            country TEXT,
+            FOREIGN KEY(country) REFERENCES Countries(CountryID)
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
+def fetch_and_insert_curated_countries():
+    conn = sqlite3.connect("project-code/app/backend/group31_backend/database/Database31HardCodedV3.db")
+    cursor = conn.cursor()
+    
+    # Prepare the SQL query to fetch specific countries
+    placeholders = ','.join('?' for _ in country_ids)  # Create placeholders string
+    query = f"SELECT CountryID, name, flag FROM Countries WHERE CountryID IN ({placeholders})"
+    
+    # Execute the query to fetch countries
+    cursor.execute(query, country_ids)
+    countries = cursor.fetchall()
+    
+    # Insert each fetched country into CuratedCountries
+    for country in countries:
+        cursor.execute('''
+            INSERT OR IGNORE INTO CuratedCountries (CountryID, name, flag)
+            VALUES (?, ?, ?)
+        ''', country)
+    
+    conn.commit()
+    conn.close()
+
+def fetch_and_insert_curated_leagues():
+    conn = sqlite3.connect("project-code/app/backend/group31_backend/database/Database31HardCodedV3.db")
+    cursor = conn.cursor()
+    
+    # Prepare the SQL query to fetch specific leagues
+    placeholders = ','.join('?' for league_id in league_ids)  # Create a placeholders string
+    query = f"SELECT LeagueID, name, logo, country FROM Leagues WHERE LeagueID IN ({placeholders})"
+    
+    # Execute the query to fetch leagues
+    cursor.execute(query, league_ids)
+    leagues = cursor.fetchall()
+    
+    # Insert each fetched league into CuratedLeagues
+    for league in leagues:
+        cursor.execute('''
+            INSERT OR IGNORE INTO CuratedLeagues (LeagueID, name, logo, country)
+            VALUES (?, ?, ?, ?)
+        ''', league)
+    
+    conn.commit()
+    conn.close()
+
+
+def delete_curated_countries_by_ids(country_ids_to_delete):
+    conn = sqlite3.connect("project-code/app/backend/group31_backend/database/Database31HardCodedV3.db")
+    cursor = conn.cursor()
+    
+    # Prepare the SQL query to delete specific countries by their IDs
+    placeholders = ','.join('?' for _ in country_ids_to_delete)  # Create placeholders string
+    query = f"DELETE FROM CuratedCountries WHERE CountryID IN ({placeholders})"
+    
+    # Execute the query to delete countries
+    cursor.execute(query, country_ids_to_delete)
+    
+    conn.commit()
+    conn.close()
+
+if __name__ == "__main__":
+    #create_curated_leagues_table()
+    #fetch_and_insert_curated_leagues()
+    #create_curated_countries_table()
+    #fetch_and_insert_curated_countries()
+    delete_curated_countries_by_ids(['Q31'])

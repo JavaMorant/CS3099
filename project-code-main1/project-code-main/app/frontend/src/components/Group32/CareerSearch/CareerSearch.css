@@ -1,0 +1,181 @@
+@import '../../../constants/colours.css';
+
+.career-search {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: top;
+  flex-grow: 0;
+  overflow: auto;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 10px;
+  overflow: scroll;
+  padding-bottom: 30;
+}
+
+.search-input-dark {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid var(--button-blue-darkmode);
+  border-radius: 5px;
+  margin-right: 10px;
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.search-input-light {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid var(--button-blue);
+  border-radius: 5px;
+  margin-right: 10px;
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.control-button {
+  background-color: var(--button-red);
+  color: var(--background-white);
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:disabled {
+  background-color: var(--button-grey);
+}
+
+.card-info {
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0 20px;
+  flex-grow: 0;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  padding-bottom: 30px;
+}
+
+.search-result {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.group-buttons {
+  align-items: center;
+  flex-grow: 0;
+  padding-bottom: 10px;
+}
+
+.player-card-name {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.player-image {
+  border-radius: 10%;
+  flex: 1;
+}
+
+.player-image-container {
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background: var(--background-white);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.show-popup {
+  display: flex;
+}
+
+.main-header {
+  font-weight: bold;
+  font-size: 24px;
+  padding-bottom: 12px;
+  white-space: normal; /* Allow text to wrap */
+  word-wrap: break-word;
+  padding-bottom: 20px;
+}
+
+.error-message {
+  background-color: #AD0000 !important;
+  color: white !important;
+}
+
+.error-message:hover {
+  background-color: var(--button-grey) !important;
+}
+
+.core-player-info {
+  text-align: left;
+  padding: 5px;
+  border-radius: 5px;
+  align-items: center;
+  width: 100%;
+  flex-grow: 0;
+  flex-direction: row;
+  display: flex;
+  padding-top: 6px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.player-details {
+  flex-grow: 0;
+  flex-direction: column;
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.other-options {
+  display: flex;
+  flex-direction: row;
+}
+
+.other-options button {
+  background-color: transparent;
+  padding-right: 0;
+  padding-top: 5px;
+}
+
+.other-options img {
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.Extra {
+  padding-right: 10px;
+}
